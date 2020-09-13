@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Stimulating the zombie cookies with cortisol</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+</head>
+<body>
+
+<!-- Sliding Puzzle by 101Computing - www.101computing.net/sliding-puzzle/-->
+<center>
+<div id="table" style="display: table;">
+   <div id="row1" style="display: table-row;">
+      <div id="cell11" class="tile1" onClick="swap(this);"></div>
+      <div id="cell12" class="tile2" onClick="swap(this);"></div>
+      <div id="cell13" class="tile3" onClick="swap(this);"></div>
+   </div>
+   <div id="row2" style="display: table-row;">
+      <div id="cell21" class="tile4" onClick="swap(this);"></div>
+      <div id="cell22" class="tile5" onClick="swap(this);"></div>
+      <div id="cell23" class="tile6" onClick="swap(this);"></div>
+   </div>
+   <div id="row3" style="display: table-row;">
+      <div id="cell31" class="tile7" onClick="swap(this);"></div>
+      <div id="cell32" class="tile8" onClick="swap(this);"></div>
+      <div id="cell33" class="tile9" onClick="swap(this);"></div>
+   </div>
+</div>
+  <button onClick="shuffle(arr);">코티솔로 좀비쿠키 자극하기</button>
+</center>
+
+
+
+
+
+<script>
+
+// To enable the sliding effect
+function swap(elem) {
+   'use strict';
+   var div2 = document.getElementById('cell33'),
+        temp1 = elem.id,
+        temp2 = div2.id,
+        test = true;
+
+ if ( test === true ) {
+            elem.id = temp2;
+            div2.id = temp1;
+          };
+
+
+
+};
+
+// The shuffle code for new game
+let arr = ['cell11', 'cell12', 'cell13', 'cell21', 'cell22', 'cell23', 'cell31', 'cell32', 'cell33'];
+function shuffle(array) {
+	array.sort(() => Math.random() - 0.5);
+
+	var cell11 = document.getElementById('cell11'),
+	cell12 = document.getElementById('cell12'),
+	cell13 = document.getElementById('cell13');
+
+	var cell21 = document.getElementById('cell21'),
+	cell22 = document.getElementById('cell22'),
+	cell23 = document.getElementById('cell23');
+
+	var cell31 = document.getElementById('cell31'),
+	cell32 = document.getElementById('cell32'),
+	cell33 = document.getElementById('cell33');
+
+	cell11.id = arr[0];
+	cell12.id = arr[1];
+	cell13.id = arr[2];
+
+	cell21.id = arr[3];
+	cell22.id = arr[4];
+	cell23.id = arr[5];
+
+	cell31.id = arr[6];
+	cell32.id = arr[7];
+	cell33.id = arr[8];
+};
+
+</script>
+</body>
+</html>
